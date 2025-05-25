@@ -305,3 +305,18 @@ input:checked + .slider:before {
 .switch-wrapper h1 {
     border-bottom: none;
 }
+
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.photo-wrapper {
+    text-align: center;
+    margin-bottom: 30px;
+}
