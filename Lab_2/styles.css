@@ -1,0 +1,307 @@
+body {
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body > * {
+    max-width: 2000px;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #007acc;
+    font-size: 3rem;
+    margin-bottom: 8px;
+    border-bottom: 3px solid #007acc;
+    padding-bottom: 8px;
+}
+
+h2 {
+    color: #004d80;
+    margin-top: 20px;
+    font-size: 1.6rem;
+    border-left: 6px solid #007acc;
+    padding-left: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+strong {
+    color: inherit; /* Колір залежить від теми */
+}
+
+ul {
+    padding-left: 20px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+ul li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+ul li::before {
+    content: "✔";
+    color: #007acc;
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    body > * {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p, ul {
+        font-size: 1rem;
+    }
+}
+
+section {
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin: 30px 0 10px 0;
+}
+
+a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #004d80;
+    text-decoration: underline;
+}
+
+body > *:hover {
+    background-color: #e6f4f7;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+section {
+    width: 48%;
+}
+
+/* ===== POPUP FEEDBACK ===== */
+.feedback-popup {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+.popup-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.popup-content input,
+.popup-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.popup-content textarea {
+    resize: vertical;
+    height: 60px;
+}
+
+.popup-content button {
+    width: 100%;
+    padding: 8px;
+    background-color: #2a8cff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #1c6fce;
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+/* ===== ТЕМИ ===== */
+body.day-theme {
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    color: #000000;
+}
+
+body.day-theme > * {
+    background-color: #ffffff;
+    color: #2c3e50;
+}
+
+body.night-theme {
+    background: linear-gradient(to right, #1c1c1c, #2c2c2c);
+    color: #f0f0f0;
+}
+
+body.night-theme > * {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+}
+
+body.night-theme a {
+    color: #4da3ff;
+}
+
+body.night-theme a:hover {
+    color: #7bb7ff;
+}
+
+body.night-theme .popup-content {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+body.night-theme .popup-content input,
+body.night-theme .popup-content textarea {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+/* Зміни для strong тегів */
+body.day-theme strong {
+    color: #007acc; /* День - синій */
+}
+
+body.night-theme strong {
+    color: #ff9800;
+}
+
+.switch {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    z-index: 1000;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; width: 26px;
+    left: 4px; bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.switch-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.switch-wrapper h1 {
+    border-bottom: none;
+}
